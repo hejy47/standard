@@ -18,11 +18,15 @@ module.exports = {
       "type": "string",
       "required": false,
       "message": "Project description",
-      "default": "A Vue.js project"
+      "default": "A WePY project"
     },
     "author": {
       "type": "string",
       "message": "Author"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "Use ESLint to lint your code?"
     }
   }
 }

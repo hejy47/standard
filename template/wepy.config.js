@@ -3,7 +3,9 @@ var prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
   wpyExt: '.wpy',
+  {{#lint}}
   eslint: true,
+  {{/lint}}
   cliLogs: true,
   build: {
     web: {
