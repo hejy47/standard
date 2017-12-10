@@ -6,7 +6,8 @@
   .count {
     font-size: 18px;
     font-weight: bold;
-    {{#!redux}}
+    {{#if redux}}
+    {{else}}
     &.red {
       color: red;
     }
