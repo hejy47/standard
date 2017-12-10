@@ -38,6 +38,8 @@ module.exports = {
     }
   },
   "filters": {
+    ".eslintignore": "lint",
+    ".eslintrc.js": "lint",
     "src/store/**/*": "redux"
   }
 }
