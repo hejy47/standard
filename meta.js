@@ -38,9 +38,6 @@ module.exports = {
     }
   },
   "filters": {
-    "src/store/**/*": "redux",
-    "src/pages/*-redux.wpy": "redux",
-    "src/app-redux.wpy": "redux",
-    "src/app.wpy": "!redux"
+    "src/store/**/*": "redux"
   }
 }
