@@ -6,15 +6,12 @@
   .count {
     font-size: 18px;
     font-weight: bold;
-    {{#if redux}}
-    {{else}}
     &.red {
       color: red;
     }
     &.green {
       color: green;
     }
-    {{/redux}}
   }
 </style>
 <template>
