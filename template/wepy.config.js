@@ -7,6 +7,7 @@ module.exports = {
   eslint: true,
   {{/lint}}
   cliLogs: true,
+  {{#web}}
   build: {
     web: {
       htmlTemplate: path.join('src', 'index.template.html'),
@@ -14,12 +15,12 @@ module.exports = {
       jsOutput: path.join('web', 'index.js')
     }
   },
+  {{/web}}
   resolve: {
     alias: {
       counter: path.join(__dirname, 'src/components/counter'),
       '@': path.join(__dirname, 'src')
     },
-    aliasFields: ['wepy'],
     modules: ['node_modules']
   },
   compilers: {

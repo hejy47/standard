@@ -30,6 +30,11 @@
       <text class="info">{{mixin}}</text>
       <text class="info">{{mynum}}</text>
       <text class="info">{{now}}</text>
+      {{#redux}}
+      <text class="info">{{num}}</text>
+      <text class="info">{{asyncNum}}</text>
+      <text class="info">{{sumNum}}</text>
+      {{/redux}}
       <button @tap="plus('a')" size="mini">  +  </button>
     </panel>
 
@@ -51,7 +56,7 @@
 
       <text class="testcounter">计数组件1: </text>
       <view class="counterview">
-        <counter1 @index-emit.user="counterEmit" />
+        <counter1 @index-emit="counterEmit" />
       </view>
 
       <text class="testcounter">计数组件2: </text>
@@ -79,16 +84,29 @@
 
 <script>
   import wepy from 'wepy'
+  {{#redux}}
+  import { connect } from 'wepy-redux'
+  {{/redux}}
+  import List from '../components/list'
   import Panel from '@/components/panel' // alias example
   import Counter from 'counter' // alias example
-  import List from '../components/list' // aliasFields example
-  import moduleA from 'module-a' // aliasFields ignore module example
   import Group from '../components/group'
   import Toast from 'wepy-com-toast'
   import testMixin from '../mixins/test'
 
-  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
-
+  {{#redux}}
+  @connect({
+    num (state) {
+      return state.counter.num
+    },
+    asyncNum (state) {
+      return state.counter.asyncNum
+    },
+    sumNum (state) {
+      return state.counter.num + state.counter.asyncNum
+    }
+  })
+  {{/redux}}
   export default class Index extends wepy.page {
     config = {
       navigationBarTitleText: 'test'

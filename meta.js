@@ -27,6 +27,20 @@ module.exports = {
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
+    },
+    "redux": {
+      "type": "confirm",
+      "message": "Use Redux in your project?"
+    },
+    "web": {
+      "type": "confirm",
+      "message": "Use web transform feature in your project?"
     }
+  },
+  "filters": {
+    "src/store/**/*": "redux",
+    "src/pages/*-redux.wpy": "redux",
+    "src/app-redux.wpy": "redux",
+    "src/app.wpy": "!redux"
   }
 }

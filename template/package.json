@@ -8,13 +8,15 @@
     "build": "cross-env NODE_ENV=production wepy build --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "wepy": {
-    "module-a": false,
-    "./src/components/list": "./src/components/wepy-list.wpy"
-  },
   "author": "{{ author }}",
   "license": "MIT",
   "dependencies": {
+    {{#redux}}
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-promise": "^0.5.3",
+    "wepy-redux": "^1.5.3",
+    {{/redux}}
     "wepy": "^1.6.0",
     "wepy-async-function": "^1.4.4",
     "wepy-com-toast": "^1.0.2"
