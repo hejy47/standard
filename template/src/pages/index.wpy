@@ -18,22 +18,22 @@
 <template>
   <view class="container">
     <view class="userinfo" @tap="handleViewTap">
-      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
-      <view class="userinfo-nickname">{{ userInfo.nickName }}</view>
+      <image class="userinfo-avatar" src="\{{ userInfo.avatarUrl }}" background-size="cover"/>
+      <view class="userinfo-nickname">\{{ userInfo.nickName }}</view>
     </view>
 
     <panel>
       <view class="title" slot="title">测试数据绑定</view>
 
-      <text class="info">{{normalTitle}}</text>
-      <text class="info">{{setTimeoutTitle}}</text>
-      <text class="info">{{mixin}}</text>
-      <text class="info">{{mynum}}</text>
-      <text class="info">{{now}}</text>
+      <text class="info">\{{normalTitle}}</text>
+      <text class="info">\{{setTimeoutTitle}}</text>
+      <text class="info">\{{mixin}}</text>
+      <text class="info">\{{mynum}}</text>
+      <text class="info">\{{now}}</text>
       {{#redux}}
-      <text class="info">{{num}}</text>
-      <text class="info">{{asyncNum}}</text>
-      <text class="info">{{sumNum}}</text>
+      <text class="info">\{{num}}</text>
+      <text class="info">\{{asyncNum}}</text>
+      <text class="info">\{{sumNum}}</text>
       {{/redux}}
       <button @tap="plus('a')" size="mini">  +  </button>
     </panel>
@@ -47,7 +47,7 @@
 
     <panel>
       <view class="title" slot="title">测试并发网络请求</view>
-      <view>返回结果: <text>{{netrst}}</text></view>
+      <view>返回结果: <text>\{{netrst}}</text></view>
       <button @tap="request" size="mini"> 点我发起10个请求 </button>
     </panel>
 
@@ -68,7 +68,7 @@
 
     <panel>
       <view class="title" slot="title">测试组件Repeat</view>
-      <repeat for="{{groupList}}" index="index" item="item" key="key">
+      <repeat for="\{{groupList}}" index="index" item="item" key="key">
         <group :grouplist="item" :indexa="index"></group>
       </repeat>
     </panel>
