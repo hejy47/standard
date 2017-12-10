@@ -4,8 +4,8 @@
   "description": "{{ description }}",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "wepy build --watch",
-    "build": "cross-env NODE_ENV=production wepy build --no-cache",
+    "dev": "./node_modules/wepy-cli build --watch",
+    "build": "cross-env NODE_ENV=production ./node_modules/wepy-cli build --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{ author }}",
@@ -18,6 +18,7 @@
     "wepy-redux": "^1.5.3",
     {{/redux}}
     "wepy": "^1.6.0",
+    "wepy-cli": "^1.6.0",
     "wepy-async-function": "^1.4.4",
     "wepy-com-toast": "^1.0.2"
   },
